@@ -31,3 +31,12 @@ nest g res lists --no-spec
 
 =========List Items=======
 nest g res listItem --no-spec
+
+====DOCKER==========
+BUILD
+docker-compose -f docker-compose.prod.yml --env-file .env.prod up --build
+
+RUN
+docker-compose -f docker-compose.prod.yml --env-file .env.prod up
+
+

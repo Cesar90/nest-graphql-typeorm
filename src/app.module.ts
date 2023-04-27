@@ -54,14 +54,14 @@ import { ListItemModule } from './list-item/list-item.module';
     // }),
 
     TypeOrmModule.forRoot({
-      // ssl: process.env.STAGE === 'prod' ? true : false,
-      // extra: {
-      //   ssl: process.env.STAGE === 'prod' ? { rejectUnauthorized: false } : null
-      // },
-      ssl: ( process.env.STATE === 'prod' ) ? {
-        rejectUnauthorized: false,
-        sslmode: 'required'
-      } : false as any,
+      ssl: process.env.STAGE === 'prod' ? true : false,
+      extra: {
+        ssl: process.env.STAGE === 'prod' ? { rejectUnauthorized: false } : null
+      },
+      // ssl: ( process.env.STATE === 'prod' ) ? {
+      //   rejectUnauthorized: false,
+      //   sslmode: 'required'
+      // } : false as any,
       type: 'postgres',
       host: process.env.DB_HOST,
       port: +process.env.DB_PORT,
@@ -82,4 +82,14 @@ import { ListItemModule } from './list-item/list-item.module';
   controllers: [],
   providers: [],
 })
-export class AppModule {}
+export class AppModule {
+  constructor() {
+    console.log('Variables de entorno');
+    console.log("STATE",  process.env.STATE );
+    console.log("host",  process.env.DB_HOST );
+    console.log("port",  +process.env.DB_PORT );
+    console.log("username",  process.env.DB_USERNAME );
+    console.log("password",  process.env.DB_PASSWORD );
+    console.log("database",  process.env.DB_NAME );
+  }
+}
