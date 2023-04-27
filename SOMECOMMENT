@@ -1,0 +1,33 @@
+npm install @nestjs/graphql@10.0.21 @nestjs/apollo@10.0.19 graphql@16.6.0 apollo-server-express@3.10.1 apollo-server-core@3.10.1
+nest g res items --no-spec
+npm install @nestjs/config
+
+=========Install TypeORM
+npm install --save @nestjs/typeorm typeorm pg
+
+=========User=======
+nest g res users --no-spec
+
+=========Auth=======
+nest g res auth --no-spec
+
+=========bcryp======
+for password
+npm install bcrypt
+
+=========passport====
+npm install --save @nestjs/passport passport
+npm install --save @nestjs/jwt passport-jwt
+npm install -D @types/passport-jwt
+
+=========Create Seed=====
+nest g res seed --no-spec
+
+=========Common Module=====
+nest g mo common
+
+=========List Module======
+nest g res lists --no-spec
+
+=========List Items=======
+nest g res listItem --no-spec
